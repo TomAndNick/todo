@@ -1,12 +1,15 @@
 .demo-card-wide.mdl-card {
     width: 100%;
 }
-.demo-card-wide > .mdl-card__title {
-}
 
 .addNewButton {
     position: fixed;
     right: 2.5%;
     bottom: 2.5%;
     z-index: 1;
+}
+
+.mdl-button {
+ margin-top: 5px;
+ margin-bottom: 5px;
 }

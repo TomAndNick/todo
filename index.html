@@ -47,7 +47,7 @@
 								<h2 class="mdl-card__title-text">Today</h2>
 							</div>
 							<div class="mdl-card__actions mdl-card--border">
-								<ul id="todayList">
+								<ul id="todayList" class="mdl-list">
 								</ul>
 							</div>
 						</div>
@@ -60,11 +60,13 @@
 								<h2 class="mdl-card__title-text">Tomorrow</h2>
 							</div>
 							<div class="mdl-card__actions mdl-card--border">
-								<ul id="tomorrowList">
+								<ul id="tomorrowList" class="mdl-list">
 								</ul>
 							</div>
 						</div>
 					</div>
+				</div>
+				<div class="mdl-grid">
 
 					<!-- This Week -->
 					<div class="mdl-cell mdl-cell--4-col mdl-cell--12-col-tablet">
@@ -73,7 +75,7 @@
 								<h2 class="mdl-card__title-text">This Week</h2>
 							</div>
 							<div class="mdl-card__actions mdl-card--border">
-								<ul id="thisweekList">
+								<ul id="thisweekList" class="mdl-list">
 								</ul>
 							</div>
 						</div>
@@ -86,7 +88,7 @@
 								<h2 class="mdl-card__title-text">Next Week</h2>
 							</div>
 							<div class="mdl-card__actions mdl-card--border">
-								<ul id="nextweekList">
+								<ul id="nextweekList" class="mdl-list">
 								</ul>
 							</div>
 						</div>
@@ -99,7 +101,7 @@
 								<h2 class="mdl-card__title-text">Later</h2>
 							</div>
 							<div class="mdl-card__actions mdl-card--border">
-								<ul id="laterList">
+								<ul id="laterList" class="mdl-list">
 								</ul>
 							</div>
 						</div>
@@ -114,18 +116,18 @@
 		</main>
 		<dialog class="mdl-dialog show-modal">
 			<div class="mdl-dialog__content">
-				<form action="#" autocomplete="on">
+				<form id="newToDoForm" action="#" autocomplete="on">
 					<div class="mdl-textfield mdl-js-textfield">
 						<input class="mdl-textfield__input" type="text" id="descriptionInput">
 						<label class="mdl-textfield__label" for="sample1">Description...</label>
 					</div>
 					<!-- Simple Select with arrow -->
 					<div class="mdl-textfield mdl-js-textfield getmdl-select">
-						<input type="text" value="" class="mdl-textfield__input" id="sample2">
-						<input type="hidden" value="" name="sample2" id="bucketInput">
+						<input type="text" value="" class="mdl-textfield__input" id="bucketInputText">
+						<input type="hidden" value="" name="bucketInputText" id="bucketInput">
 						<i class="mdl-icon-toggle__label material-icons">keyboard_arrow_down</i>
-						<label for="sample2" class="mdl-textfield__label">When</label>
-						<ul for="sample2" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
+						<label for="bucketInputText" class="mdl-textfield__label">When</label>
+						<ul for="bucketInputText" class="mdl-menu mdl-menu--bottom-left mdl-js-menu">
 							<li class="mdl-menu__item" data-val="todayList">Today</li>
 							<li class="mdl-menu__item" data-val="tomorrowList">Tomorrow</li>
 							<li class="mdl-menu__item" data-val="thisweekList">This Week</li>
@@ -138,7 +140,7 @@
 			</div>
 			<div class="mdl-dialog__actions mdl-dialog__actions--full-width">
 				<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--primary" onclick="addNewButtonHandler()" >Add</button>
-				<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect closeDialog">Cancel</button>
+				<button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--disabled closeDialog">Cancel</button>
 			</div>
 		</dialog>
 	</div>

@@ -50,11 +50,15 @@ var initialiseHTML = function () {
     });
 
     for (x in todos) {
-        var ul = document.getElementById(todos[x].bucket);
+        var parent = document.getElementById(todos[x].bucket);
+        /*
         var li = document.createElement("li");
         li.appendChild(document.createTextNode(todos[x].description));
         li.setAttribute("id", "todoItem-" + todos[x].id);
         ul.appendChild(li);
+        */
+
+        buildToDoHTML(parent, todos[x].description, todos[x].id)
     }
 }
 
@@ -70,11 +74,42 @@ var initialiseHandlers = function () {
     });
     dialog.querySelector('.closeDialog').addEventListener('click', function () {
         dialog.close();
+        document.getElementById("descriptionInput").value="";
+        document.getElementById("bucketInput").value="";
     });
 }
 
+var buildToDoHTML = function(parent, description, id){
+    var li = document.createElement("li");
+    var span = document.createElement("span");
+
+    span.setAttribute("class", "mdl-list__item-primary-content");
+    span.textContent = description;
+
+    var spanAction = document.createElement("span");
+    spanAction.setAttribute("class", "mdl-list__item-secondary-action");
+
+    var label = document.createElement("label");
+    label.setAttribute("class", "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect");
+    label.setAttribute("for", "todo-checkbox-"+id);
+
+    var input = document.createElement("input");
+    input.setAttribute("type", "checkbox");
+    input.setAttribute("id", "todo-checkbox-"+id);
+    input.setAttribute("class", "mdl-checkbox__input");
+
+    label.appendChild(input);
+    spanAction.appendChild(label);
+    
+    li.setAttribute("id", "todoItem-" + id);
+    li.setAttribute("class", "mdl-list__item");
+    
+    li.appendChild(spanAction);
+    li.appendChild(span);
+    parent.appendChild(li);
+}
+
 var addNewButtonHandler = function () {
-    console.log(todos);
     var description = document.getElementById("descriptionInput");
     var bucket = document.getElementById("bucketInput");
 
@@ -85,8 +120,19 @@ var addNewButtonHandler = function () {
     console.log(todos[todo-1]);
     var ul = document.getElementById(bucket.value);
     var li = document.createElement("li");
-    li.appendChild(document.createTextNode(description.value));
+    
+    var span = document.createElement("span");
+    span.setAttribute("class", "mdl-list__item-primary-content");
+
+
+    span.appendChild(document.createTextNode(description.value));
     li.setAttribute("id", "todoItem-" + todos[todo-1].id);
+    li.setAttribute("class", "mdl-list__item");
+    
+    li.appendChild(span)
     ul.appendChild(li);
+
     document.querySelector('dialog').close();
+    document.getElementById("descriptionInput").value="";
+    document.getElementById("bucketInputText").value="";
 };
