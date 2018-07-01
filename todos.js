@@ -38,6 +38,11 @@ var initialiseData = function () {
 
 initialiseData();
 
+var init = function(){
+    initialiseHTML();
+    initialiseHandlers();
+}
+
 var initialiseHTML = function () {
 
     todos.sort(function (a, b) {
@@ -53,16 +58,17 @@ var initialiseHTML = function () {
     }
 }
 
-var newTodoHandler = function () {
+var initialiseHandlers = function () {
     var dialog = document.querySelector('dialog');
     var showModalButton = document.querySelector('.show-modal');
     if (!dialog.showModal) {
         dialogPolyfill.registerDialog(dialog);
     }
+
     showModalButton.addEventListener('click', function () {
         dialog.showModal();
     });
-    dialog.querySelector('.close').addEventListener('click', function () {
+    dialog.querySelector('.closeDialog').addEventListener('click', function () {
         dialog.close();
     });
 }
@@ -82,4 +88,5 @@ var addNewButtonHandler = function () {
     li.appendChild(document.createTextNode(description.value));
     li.setAttribute("id", "todoItem-" + todos[todo-1].id);
     ul.appendChild(li);
+    document.querySelector('dialog').close();
 };

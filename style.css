@@ -4,10 +4,6 @@
 .demo-card-wide > .mdl-card__title {
 }
 
-.demo-card-wide > .mdl-card__menu {
-    color: #fff;
-}
-
 .addNewButton {
     position: fixed;
     right: 2.5%;
