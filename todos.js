@@ -38,7 +38,7 @@ var initialiseData = function () {
 
 initialiseData();
 
-var init = function(){
+var init = function () {
     initialiseHTML();
     initialiseHandlers();
 }
@@ -74,12 +74,12 @@ var initialiseHandlers = function () {
     });
     dialog.querySelector('.closeDialog').addEventListener('click', function () {
         dialog.close();
-        document.getElementById("descriptionInput").value="";
-        document.getElementById("bucketInput").value="";
+        document.getElementById("descriptionInput").value = "";
+        document.getElementById("bucketInput").value = "";
     });
 }
 
-var buildToDoHTML = function(parent, description, id){
+var buildToDoHTML = function (parent, description, id) {
     var li = document.createElement("li");
     var span = document.createElement("span");
 
@@ -89,21 +89,20 @@ var buildToDoHTML = function(parent, description, id){
     var spanAction = document.createElement("span");
     spanAction.setAttribute("class", "mdl-list__item-secondary-action");
 
-    var label = document.createElement("label");
-    label.setAttribute("class", "mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect");
-    label.setAttribute("for", "todo-checkbox-"+id);
+    var input = document.createElement("button");
+    input.setAttribute("id", "todo-checkbox-" + id);
+    input.setAttribute("class", "mdl-button mdl-js-button mdl-button--mini-fab mdl-js-ripple-effect");
 
-    var input = document.createElement("input");
-    input.setAttribute("type", "checkbox");
-    input.setAttribute("id", "todo-checkbox-"+id);
-    input.setAttribute("class", "mdl-checkbox__input");
+    var icon = document.createElement("i");
+    icon.setAttribute("class", "material-icons .md-6");
+    icon.textContent = "adjust";
 
-    label.appendChild(input);
-    spanAction.appendChild(label);
-    
+    input.appendChild(icon);
+    spanAction.appendChild(input);
+
     li.setAttribute("id", "todoItem-" + id);
     li.setAttribute("class", "mdl-list__item");
-    
+
     li.appendChild(spanAction);
     li.appendChild(span);
     parent.appendChild(li);
@@ -117,22 +116,22 @@ var addNewButtonHandler = function () {
     console.log(bucket.value);
 
     var todo = newTodo(description.value, bucket.value, idCounter++);
-    console.log(todos[todo-1]);
+    console.log(todos[todo - 1]);
     var ul = document.getElementById(bucket.value);
     var li = document.createElement("li");
-    
+
     var span = document.createElement("span");
     span.setAttribute("class", "mdl-list__item-primary-content");
 
 
     span.appendChild(document.createTextNode(description.value));
-    li.setAttribute("id", "todoItem-" + todos[todo-1].id);
+    li.setAttribute("id", "todoItem-" + todos[todo - 1].id);
     li.setAttribute("class", "mdl-list__item");
-    
+
     li.appendChild(span)
     ul.appendChild(li);
 
     document.querySelector('dialog').close();
-    document.getElementById("descriptionInput").value="";
-    document.getElementById("bucketInputText").value="";
+    document.getElementById("descriptionInput").value = "";
+    document.getElementById("bucketInputText").value = "";
 };

@@ -13,3 +13,10 @@
  margin-top: 5px;
  margin-bottom: 5px;
 }
+
+.mdl-list__item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.material-icons.md-6 { font-size: 2px; }
