@@ -7,3 +7,10 @@
 .demo-card-wide > .mdl-card__menu {
     color: #fff;
 }
+
+.addNewButton {
+    position: fixed;
+    right: 2.5%;
+    bottom: 2.5%;
+    z-index: 1;
+}

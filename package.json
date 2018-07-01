@@ -1,0 +1,23 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "description": "This is our great todo app!",
+  "main": "index.html",
+  "dependencies": {
+    "getmdl-select": "^2.0.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TomAndNick/todo.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TomAndNick/todo/issues"
+  },
+  "homepage": "https://github.com/TomAndNick/todo#readme"
+}
