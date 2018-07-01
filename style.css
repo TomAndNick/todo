@@ -1,12 +1,6 @@
 .demo-card-wide.mdl-card {
     width: 100%;
 }
-.demo-card-wide > .mdl-card__title {
-}
-
-.demo-card-wide > .mdl-card__menu {
-    color: #fff;
-}
 
 .addNewButton {
     position: fixed;
@@ -14,3 +8,15 @@
     bottom: 2.5%;
     z-index: 1;
 }
+
+.mdl-button {
+ margin-top: 5px;
+ margin-bottom: 5px;
+}
+
+.mdl-list__item {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.material-icons.md-6 { font-size: 2px; }
