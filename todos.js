@@ -116,20 +116,7 @@ var addNewButtonHandler = function () {
     console.log(bucket.value);
 
     var todo = newTodo(description.value, bucket.value, idCounter++);
-    console.log(todos[todo - 1]);
-    var ul = document.getElementById(bucket.value);
-    var li = document.createElement("li");
-
-    var span = document.createElement("span");
-    span.setAttribute("class", "mdl-list__item-primary-content");
-
-
-    span.appendChild(document.createTextNode(description.value));
-    li.setAttribute("id", "todoItem-" + todos[todo - 1].id);
-    li.setAttribute("class", "mdl-list__item");
-
-    li.appendChild(span)
-    ul.appendChild(li);
+    buildToDoHTML(document.getElementById(bucket.value), description.value, idCounter);
 
     document.querySelector('dialog').close();
     document.getElementById("descriptionInput").value = "";
