@@ -25,7 +25,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
     "watch": "webpack --watch",
-    "deploy-gh": "gh-pages -d dist"
+    "deploy-gh": "gh-pages -d dist",
+    "serve": "node ./server/index.js"
   },
   "repository": {
     "type": "git",
