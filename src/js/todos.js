@@ -9,9 +9,7 @@ var idCounter = 0;
 var clearHTML = function() {
   var uls = [
     document.getElementById("todayList"),
-    document.getElementById("tomorrowList"),
-    document.getElementById("thisweekList"),
-    document.getElementById("nextweekList"),
+    document.getElementById("next7daysList"),
     document.getElementById("laterList")
   ];
 
@@ -140,9 +138,7 @@ var addDoneHandlers = function() {
 
 var initLists = function() {
   var today = document.getElementById("todayList");
-  var tomorrow = document.getElementById("tomorrowList");
-  var thisweek = document.getElementById("thisweekList");
-  var nextweek = document.getElementById("nextweekList");
+  var next7days = document.getElementById("next7daysList");
   var later = document.getElementById("laterList");
 
   var options = {
@@ -173,9 +169,7 @@ var initLists = function() {
   };
 
   Sortable.create(today, options);
-  Sortable.create(tomorrow, options);
-  Sortable.create(thisweek, options);
-  Sortable.create(nextweek, options);
+  Sortable.create(next7days, options);
   Sortable.create(later, options);
 };
 
